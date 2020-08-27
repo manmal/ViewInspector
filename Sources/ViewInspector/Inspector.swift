@@ -1,8 +1,8 @@
 import SwiftUI
 
-internal struct Inspector { }
+public struct Inspector { }
 
-extension Inspector {
+public extension Inspector {
     
     static func attribute(label: String, value: Any) throws -> Any {
         if label == "super", let superclass = Mirror(reflecting: value).superclassMirror {
@@ -51,7 +51,7 @@ extension Inspector {
 
 // MARK: - Attributes lookup
 
-extension Inspector {
+public extension Inspector {
     
     /**
         Use this function to lookup the struct content:
@@ -131,7 +131,7 @@ fileprivate extension Array {
 }
 // MARK: - View Inspection
 
-extension Inspector {
+public extension Inspector {
     
     static func viewsInContainer(view: Any) throws -> LazyGroup<Content> {
         let unwrappedContainer = try Inspector.unwrap(content: Content(view))
